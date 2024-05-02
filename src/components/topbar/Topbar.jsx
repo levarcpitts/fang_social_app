@@ -8,7 +8,7 @@ export default function Topbar() {
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <span className="logo">Fang Social App</span>
+        <span className="logo">Fang</span>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
