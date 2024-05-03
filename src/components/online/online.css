@@ -1,0 +1,9 @@
+.rightbarFriend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .rightbarUsername{
+    font-weight: 500;
+}
