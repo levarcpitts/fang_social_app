@@ -2,9 +2,10 @@ import "./post.css";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {format} from "timeago.js"
+import {format} from "timeago.js";
+import { Link } from "react-router-dom";
 
-export default function Post({post}) {
+export default function Post({ post }) {
 
 const [like,setLike] = useState(post.likes.length);
 const [isLiked,setIsLiked] = useState(false);
@@ -13,9 +14,9 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
 useEffect(()=>{
   const fetchUser = async () => {
-  const res = await axios.get(`users/${post.userId}`);
+  const res = await axios.get(`/users?userId=${post.userId}`);
   setUser(res.data)
-console.log(res.data.username)
+  
   };
   fetchUser();
 },[post.userId])
@@ -31,7 +32,9 @@ const likeHandler =()=> {
         <div className="postWrapper">
             <div className="postTop">
                 <div className="postTopLeft">
+                  <Link to={`profile/${user.username}`}>
                  <img className="postProfileImg" src={user.profilePicture || PF+"person/noAvatar.png"} alt="" /> 
+                 </Link>
                      <span className="postUsername">{user.username}</span> 
                     <span className="postDate">{format(post.createdAt)}</span>
 
