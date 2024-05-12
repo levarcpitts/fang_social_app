@@ -1,13 +1,15 @@
 .share {
     width: 100%;
     height: 170px;
-    border-radius: 10px;
+    border-radius: 20px;
     -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    background: linear-gradient(to bottom, white 70%, #ee7624 30%); /* Gradient split at 50% */
   }
   
   .shareWrapper {
     padding: 10px;
+    
   }
   
   .shareTop {
@@ -33,18 +35,23 @@
   }
   
   .shareHr {
-    margin: 20px;
+    margin: 10px;
   }
   
   .shareBottom {
     display: flex;
-    align-items: center;
+    align-items:end;
     justify-content: space-between;
+    position: relative;
+    top: 70px;
   }
   
   .shareOptions{
       display: flex;
       margin-left: 20px;
+      align-items: en; /* Vertically centers the icons */
+  justify-content: center; /* Horizontally centers the icons */
+  height: 100%; 
   }
   
   .shareOption{
@@ -62,15 +69,17 @@
   .shareOptionText{
       font-size: 14px;
       font-weight: 500;
+      color: white
   }
   
   .shareButton{
       border: none;
       padding: 7px;
-      border-radius: 5px;
-      background-color: green;
+      border-radius: 20px;
+      background-color: white;
       font-weight: 500;
       margin-right: 20px;
       cursor: pointer;
-      color: white;
+      color: #ee7624 ;
+    
   }

@@ -15,23 +15,23 @@ export default function Share() {
           className="shareInput"
         />
       </div>
-      <hr className="shareHr"/>
+      {/* <hr className="shareHr"/> */}
       <div className="shareBottom">
           <div className="shareOptions">
               <div className="shareOption">
-                  <PermMediaIcon htmlColor="tomato" className="shareIcon"/>
-                  <span className="shareOptionText">Photo or Video</span>
+                  <PermMediaIcon htmlColor="white" className="shareIcon"/>
+                  <span className="shareOptionText">   Photo or Video</span>
               </div>
               <div className="shareOption">
-                  <LabelIcon htmlColor="blue" className="shareIcon"/>
+                  <LabelIcon htmlColor="white" className="shareIcon"/>
                   <span className="shareOptionText">Tag</span>
               </div>
               <div className="shareOption">
-                  <RoomIcon htmlColor="green" className="shareIcon"/>
+                  <RoomIcon htmlColor="white" className="shareIcon"/>
                   <span className="shareOptionText">Location</span>
               </div>
               <div className="shareOption">
-                  <EmojiEmotionsIcon htmlColor="Gold" className="shareIcon"/>
+                  <EmojiEmotionsIcon htmlColor="white" className="shareIcon"/>
                   <span className="shareOptionText">Feelings</span>
               </div>
           </div>

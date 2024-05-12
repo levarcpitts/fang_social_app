@@ -1,8 +1,10 @@
 .feed {
-    flex: 5.5;
+    flex: 5.5; 
 }
 
 
 .feedWrapper {
-    overflow-y: auto;
+
+   margin: 20px;
+   padding: 20px;
 }

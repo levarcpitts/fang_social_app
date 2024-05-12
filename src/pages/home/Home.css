@@ -1,4 +1,10 @@
 .homeContainer {
     display: flex;
     width: 100%;
+    background-color: lightgray;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: normal;
+    align-content: normal
 }
