@@ -44,6 +44,7 @@
     justify-content: space-between;
     position: relative;
     top: 70px;
+    
   }
   
   .shareOptions{
@@ -81,5 +82,7 @@
       margin-right: 20px;
       cursor: pointer;
       color: #ee7624 ;
+      -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+      box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     
   }
