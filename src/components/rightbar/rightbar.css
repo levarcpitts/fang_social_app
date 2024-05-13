@@ -116,3 +116,25 @@
     border-radius: 50%;
     border: 4px solid gray
   }
+
+  .rightbarFollowButton{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: #1872f2;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-box-shadow: 4px 10px 24px 0px rgba(0,0,0,0.46);
+    -moz-box-shadow: 4px 10px 24px 0px rgba(0,0,0,0.46);
+    box-shadow: 4px 10px 24px 0px rgba(0,0,0,0.46);
+  }
+
+  .rightbarFollowButton:focus{
+    outline: none;
+  }

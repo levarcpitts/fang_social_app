@@ -17,6 +17,7 @@ export default function Profile() {
     const fetchUser = async () => {
     const res = await axios.get(`/users?username=${username}`);
     setUser(res.data)
+    console.log(res.data)
     
     };
     fetchUser();
@@ -30,8 +31,8 @@ export default function Profile() {
  <div className="profileRight">
   <div className="profileRightTop">
     <div className="profileCover">
-    <img className="profileCoverImg" src={user.coverPicture || PF + "person/noCover.jpeg"} alt="" />
-    <img src={user.profilePicture || PF + "person/noAvatar.png"} alt="" className="profileUserImg" />
+    <img className="profileCoverImg" src={user.coverPicture ? PF + user.coverPicture : PF + "person/noCover.jpeg"} alt="" />
+    <img src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} alt="" className="profileUserImg" />
     </div>
     <div className="profileInfo">
       <h4 className="profileInfoName">{user.username}</h4>
