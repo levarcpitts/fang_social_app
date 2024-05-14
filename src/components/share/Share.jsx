@@ -9,7 +9,8 @@ import axios from "axios";
 import { Cancel } from "@mui/icons-material";
 
 
-export default function Share() {
+export default function Share({isOpen, onClosee, childreen }) {
+
 
   const {user} = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -43,12 +44,13 @@ export default function Share() {
     }
   }
 
+  if (!isOpen) return null;
 
   return (
     <div className="share">
     <div className="shareWrapper">
       <div className="shareTop">
-        <img className="shareProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} alt="" />
+        {/* <img className="shareProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} alt="" /> */}
         <input
           placeholder={`What's on your mind ${user.username.charAt(0).toUpperCase() + user.username.slice(1)}?`}
           className="shareInput"

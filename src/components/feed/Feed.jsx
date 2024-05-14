@@ -8,8 +8,13 @@ import { AuthContext } from "../../context/AuthContext"
 
 export default function Feed({ username }) {
   const [posts,setPosts] = useState([]);
+  const [isShareOpen, setShareOpen,] = useState(false)
+
+  const toggleShare = () => setShareOpen(!isShareOpen);
 
   const {user} = useContext(AuthContext)
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
 
   useEffect(()=>{
     const fetchPosts = async () => {
@@ -25,11 +30,20 @@ export default function Feed({ username }) {
   return (
     <div className="feed">
       <div className="feedWrapper">
-      {(!username || username === user.username) && <Share />}
+        <div className="shareImgWrapper">
+      <img 
+      className="shareProfileImg" 
+      src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} 
+      alt="Share a Post" 
+      onClick={toggleShare}
+      />
+      </div>
+       {(!username || username === user.username) && <Share isOpen={isShareOpen} onClose={toggleShare} />} 
+       <div className="postPadding">
            {posts.map((p)=> ( 
              <Post key={p._id} post={p}/>
           ))} 
-          
+          </div>
         </div>
     </div>
   )

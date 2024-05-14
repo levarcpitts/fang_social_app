@@ -1,10 +1,9 @@
 .homeContainer {
     display: flex;
-    width: 100%;
-    background-color: lightgray;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: normal;
-    align-content: normal
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  background-color: lightgrey;
 }

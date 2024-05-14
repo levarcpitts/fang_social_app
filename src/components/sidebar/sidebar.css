@@ -1,5 +1,4 @@
 .sidebar{
-flex: 3;
     overflow-y: auto;
     position: sticky;
     justify-content: center;  /* Centers horizontally */
