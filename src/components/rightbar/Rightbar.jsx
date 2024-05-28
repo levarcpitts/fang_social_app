@@ -51,17 +51,50 @@ export default function Rightbar({ user }) {
   const HomeRightbar = () => {
     return(
       <>
-<div className="birthdateContainer">
-  <img src="assets/gift.png" alt="" className="birthdayImg" />
-  <span className="birthdayText"><b>Pola Foster</b> and<b> 3 other friends</b> have a birthday today</span>
-</div>
-<img src={PF} alt="" className="rightbarAd" /> 
-<h4 className="rightbarTitle">Online Friends</h4>
-<ul className="rightbarFriendList">
-  {Users.map(u=>(
-    <Online key={u.id} user={u} />
-  ))}
-</ul>
+  <div className="rightBarTitle">Events</div>
+  <div class="eventsToday">
+        <p><strong>Levar Pitts</strong> and 3 others have a birthday today</p>
+        <br></br>
+        <p><strong>3 Events</strong> are happening today</p>
+    </div>
+    <div class="eventsCalendar">
+      <p>May 2023</p>
+        <table class="calendar">
+            <tr>
+                <th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+            </tr>
+            <tr>
+                <td>15</td><td>16</td><td>17</td><td class="highlight">18</td><td>19</td><td>20</td><td>21</td>
+            </tr>
+            <tr>
+                <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+            </tr>
+            <tr>
+                <td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="eventsByHour">
+        <div class="eventItem">
+            <p><strong>FAMU Golf Tournament</strong></p>
+            <p>Carolina Lakes Golf Club</p>
+        </div>
+    </div>
+{/* <h4 className="rightbarTitle">Online Friends</h4> 
+ <ul className="rightbarFriendList"> 
+  {Users.map(u=>( 
+     <Online key={u.id} user={u} />
+   ))}
+</ul> */}
 </>
     )
   }

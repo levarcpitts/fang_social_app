@@ -7,6 +7,7 @@ import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { Cancel } from "@mui/icons-material";
+import PermMediaRoundedIcon from '@mui/icons-material/PermMediaRounded';
 
 
 export default function Share({isOpen, onClosee, childreen }) {
@@ -16,6 +17,27 @@ export default function Share({isOpen, onClosee, childreen }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const desc = useRef();
   const [file, setFile] = useState(null);
+  const [width, setWidth] = useState('70vh');
+  const [height, setHeight] = useState('170px')
+  const [expanded, setExpanded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+
+ 
+  const toggleExpansion = () => {
+    console.log(`'${height}'` )
+    if (expanded) {
+      setWidth('70vh');
+      setHeight('170px');
+      setExpanded(false);
+      setIsVisible(isVisible)
+    }else {
+      setWidth('70vh');
+      setHeight('600px');
+      setIsVisible(!isVisible);
+      setExpanded(true);
+    }
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault()
@@ -47,7 +69,7 @@ export default function Share({isOpen, onClosee, childreen }) {
   if (!isOpen) return null;
 
   return (
-    <div className="share">
+    <div className="share" style={{ width: width, height: height}}>
     <div className="shareWrapper">
       <div className="shareTop">
         {/* <img className="shareProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} alt="" /> */}
@@ -56,6 +78,9 @@ export default function Share({isOpen, onClosee, childreen }) {
           className="shareInput"
           ref={desc}
         />
+        <div className="mediaButtonWrapper">
+        <PermMediaRoundedIcon sx={{ fontSize: 20 }} onClick={toggleExpansion} cursor="pointer" />
+        </div>
       </div>
       {file && (
           <div className="shareImgContainer">
@@ -64,9 +89,9 @@ export default function Share({isOpen, onClosee, childreen }) {
           </div>
         )}
       <form className="shareBottom" onSubmit={submitHandler}>
-          <div className="shareOptions">
+      <div className={`shareOptions ${isVisible ? 'visible' : 'hidden'}`}>
               <label htmlFor="file" className="shareOption">
-                  <PermMediaIcon htmlColor="white" className="shareIcon"/>
+                  <PermMediaIcon htmlColor="lightgray" className="shareIcon"/>
                   <span className="shareOptionText">Photo or Video</span>
                   <input
                 style={{ display: "none" }}
@@ -77,15 +102,15 @@ export default function Share({isOpen, onClosee, childreen }) {
               />
               </label>
               <div className="shareOption">
-                  <LabelIcon htmlColor="white" className="shareIcon"/>
+                  <LabelIcon htmlColor="lightgray" className="shareIcon"/>
                   <span className="shareOptionText">Tag</span>
               </div>
               <div className="shareOption">
-                  <RoomIcon htmlColor="white" className="shareIcon"/>
+                  <RoomIcon htmlColor="lightgray" className="shareIcon"/>
                   <span className="shareOptionText">Location</span>
               </div>
               <div className="shareOption">
-                  <EmojiEmotionsIcon htmlColor="white" className="shareIcon"/>
+                  <EmojiEmotionsIcon htmlColor="lightgray" className="shareIcon"/>
                   <span className="shareOptionText">Feelings</span>
               </div>
           </div>

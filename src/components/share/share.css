@@ -1,5 +1,4 @@
 .share {
-    height: 170px;
     border-radius: 20px;
     -webkit-box-shadow: -20px 24px 43px 0px rgba(0,0,0,0.69);
     -moz-box-shadow: -20px 24px 43px 0px rgba(0,0,0,0.69);
@@ -7,6 +6,10 @@
     background: linear-gradient(to bottom, white 70%, #ee7624 30%); 
     z-index: 900;
     position: fixed !important;
+    flex-shrink: 1;
+    transition:  all 0.3 ease;
+    flex-grow: 1;
+
   }
   
   .shareWrapper {
@@ -52,16 +55,20 @@
     display: flex;
     align-items:end;
     justify-content: space-between;
-    position: relative;
-    bottom: -100px;    
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
   }
   
   .shareOptions{
       display: flex;
       margin-left: 20px;
       align-items: en; /* Vertically centers the icons */
-  justify-content: center; /* Horizontally centers the icons */
-  height: 100%; 
+      justify-content: center; /* Horizontally centers the icons */
+      height: 100%; 
+      position: relative;
+      bottom: 175px;
+
   }
   
   .shareOption{
@@ -70,20 +77,17 @@
       margin-right: 15px;
       cursor: pointer;
       
-
   }
   
   .shareIcon{
       font-size: 18px;
-      margin-right: 3px;
-      -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-      box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+      margin-right: 3px;  
   }
   
   .shareOptionText{
       font-size: 14px;
       font-weight: 500;
-      color: white;
+      color: lightgray;
       -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
       box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   }
@@ -99,7 +103,9 @@
       color: #ee7624 ;
       -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
       box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-    
+      position: relative;
+      bottom: 0px;
+      right: -40px;
   }
 
   .shareImgContainer{
@@ -107,6 +113,7 @@
     position: relative;
     height: 50px;
     width: 50px;
+    bottom: -420px;
   }
   
   .shareImg{
@@ -120,4 +127,18 @@
     right: 20px;
     cursor: pointer;
     opacity: 0.7;
+  }
+
+  .mediaButtonWrapper{
+    color: lightgray;
+  }
+
+  .hidden {
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .visible {
+    visibility: visible;
+    pointer-events: auto;
   }
